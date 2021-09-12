@@ -1,0 +1,75 @@
+void main(){
+  void something({String na, int ag}){
+  print('my name is $na and my age is $ag');
+}
+  print('Hello, world');
+  var i=30;
+  var j='hello';
+  print(i is int);
+  print(j is String);
+  // 상수 - final
+  final String name = '옥창원';
+  print(name);
+  //name = '공병권';
+  // type 검사
+  if (name is String){
+    print('yess');
+  }
+  //else if
+  var c=30.5;
+  num d = c as num;
+  print(d is num);
+  var myclass=MyClass();
+  print(myclass.isEven(10));
+  print(staticClass.isOdd(7));
+  Person person=Person('okchangwon'); //Person이란 자료형이 되었구려.
+  person.greeting();
+  int number=22;
+  // lambda 함수
+  isODD(number)=>number%2==1;
+  print(isODD(23));
+  print(isODD(22));
+  something(na:'옥창원',ag:10);
+}
+  //var myclass=MyClass();
+  //print(myclass.isEven(10));
+class MyClass {
+    // Method
+    bool isEven(int num){
+      return num%2==0;
+    }
+}
+class staticClass{
+    static bool isOdd(int num){
+      return num%2==1;
+    }
+}
+class Person{
+  String name;
+  
+  Person(this.name); //initialization
+  void greeting(){
+    print('안녕하세요 저는 $name입니다');
+  }
+}
+
+// 선택 매개함수 -> named parameters
+void main() {
+  
+  
+  introduce(name: 'Sam', age: 5);	//I am Sam. 5 years old!
+}
+void introduce({required String name, required int age}) {
+    print('I am $name. $age yaers old!');
+  }
+void main(){
+  // if else는 익숙
+  // switch는 해보진 않았지만 
+  // for 문
+  var items=['짜장','짬뽕','라면'];
+  // 시작 끝 step
+  for (var i =0; i<items.length;i++){
+    print(items[i]);
+  }
+  
+}
